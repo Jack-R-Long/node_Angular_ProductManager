@@ -1,0 +1,9 @@
+<h1>Product List</h1>
+<div class="container border mb-2 text-center d-inline-block ml-4" *ngFor="let product of products" id="product_box">
+	<img src="{{product.url}}" alt="{{product.title}}" id="img">
+	<h5>{{product.title}}</h5>
+	<h5>{{product.price}}</h5>
+	<a class="btn btn-outline-info" [routerLink]="['/edit/'+product._id]" role="button">Edit</a>
+	<a class="btn btn-outline-warning ml-2" (click)="deletebyID(product._id)" role="button">Delete</a>
+
+</div>

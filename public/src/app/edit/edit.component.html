@@ -1,0 +1,21 @@
+<h1>Edit Product</h1>
+<form (submit)="editProductbyID()">
+	<p> {{ editProduct | json }} </p>
+	<div class="form-group">
+		<label for="exampleInputEmail1">Title</label>
+		<p class="text-danger">{{errMessage.title}}</p>
+		<input type="email" class="form-control"  name="editProduct.title" [(ngModel)]="editProduct.title"  >
+	</div>
+	<div class="form-group">
+		<label for="exampleInputEmail1">Price</label>
+		<p class="text-danger">{{errMessage.price}}</p>
+		<input type="email" class="form-control"  name="editProduct.price" [(ngModel)]="editProduct.price"  >
+	</div>
+	<div class="form-group">
+		<label for="exampleInputEmail1">Image URL</label>
+		<input type="email" class="form-control"  name="editProduct.url" [(ngModel)]="editProduct.url" >
+	</div>
+	<button type="submit" class="btn btn-primary mb-2">Edit</button>
+	<a class="btn btn-outline-warning ml-2 mb-2" (click)="deletebyID(editProduct._id)" role="button">Delete</a>
+
+</form>
